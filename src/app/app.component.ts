@@ -8,8 +8,14 @@ import {HeaderComponent} from "./components/header/header.component";
 })
 export class AppComponent {
   title = 'myApp';
+  inputMessage = 'nowa wiadomosc';
+  tempmessage = '';
 
   hello() {
     return `welcome to ${this.title}`;
+  }
+
+  updateMessage(event) {
+    this.tempmessage = event;
   }
 }

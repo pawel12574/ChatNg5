@@ -10,6 +10,7 @@ import {WelcomeMessageComponent} from "./components/welcomemessage/welcomemessag
 import {ContentComponent} from "./components/content/content.component";
 import {UserlistComponent} from "./components/userlist/userlist.component";
 import {ChathistoryComponent} from "./components/chathistory/chathistory.component";
+import { MessageComponent } from './components/message/message.component';
 
 
 
@@ -22,7 +23,8 @@ import {ChathistoryComponent} from "./components/chathistory/chathistory.compone
     WelcomeMessageComponent,
     ContentComponent,
     UserlistComponent,
-    ChathistoryComponent
+    ChathistoryComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule
