@@ -9,7 +9,5 @@ import {Message} from "../model/message";
 })
 export class ApptitleComponent {
 
-  @Input() message: Message;
-
 
 }

@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from "./components/header/header.component";
 import {InputComponent} from "./components/input/input.component";
 import {ApptitleComponent} from "./components/title/apptitle.component";
+import {WelcomeMessageComponent} from "./components/welcomemessage/welcomemessage.component";
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import {ApptitleComponent} from "./components/title/apptitle.component";
     AppComponent,
     HeaderComponent,
     InputComponent,
-    ApptitleComponent
+    ApptitleComponent,
+    WelcomeMessageComponent
   ],
   imports: [
     BrowserModule

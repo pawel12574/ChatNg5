@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+
 import {ApptitleComponent} from "../title/apptitle.component";
+import {WelcomeMessageComponent} from "../welcomemessage/welcomemessage.component";
 
 @Component({
   selector: 'app-header',
