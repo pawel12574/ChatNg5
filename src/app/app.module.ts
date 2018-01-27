@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
 
 import {AppComponent} from './app.component';
@@ -7,6 +7,10 @@ import {HeaderComponent} from "./components/header/header.component";
 import {InputComponent} from "./components/input/input.component";
 import {ApptitleComponent} from "./components/title/apptitle.component";
 import {WelcomeMessageComponent} from "./components/welcomemessage/welcomemessage.component";
+import {ContentComponent} from "./components/content/content.component";
+import {UserlistComponent} from "./components/userlist/userlist.component";
+import {ChathistoryComponent} from "./components/chathistory/chathistory.component";
+
 
 
 @NgModule({
@@ -15,7 +19,10 @@ import {WelcomeMessageComponent} from "./components/welcomemessage/welcomemessag
     HeaderComponent,
     InputComponent,
     ApptitleComponent,
-    WelcomeMessageComponent
+    WelcomeMessageComponent,
+    ContentComponent,
+    UserlistComponent,
+    ChathistoryComponent
   ],
   imports: [
     BrowserModule
@@ -23,4 +30,5 @@ import {WelcomeMessageComponent} from "./components/welcomemessage/welcomemessag
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
