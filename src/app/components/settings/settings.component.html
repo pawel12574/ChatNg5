@@ -1,0 +1,4 @@
+<div *ngIf="typedUsername.length===0">
+  <input ngModel name="username" #username>
+  <button (click)="setUsername(username.value)">Zapisz się</button>
+</div>

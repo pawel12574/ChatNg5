@@ -8,7 +8,7 @@ import {Component, Output, EventEmitter, Input} from '@angular/core';
 })
 export class MessageComponent {
 
-  defaultValue = ''
+  defaultValue = '';
 
   @Output()
   eventMessages = new EventEmitter();
