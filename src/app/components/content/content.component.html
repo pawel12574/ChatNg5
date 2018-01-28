@@ -1,4 +1,5 @@
 
-<app-chathistory></app-chathistory>
-<app-userlist></app-userlist>
+<app-chathistory [newMessage]="tempmessage" ></app-chathistory>
+
+<app-message [inputMessage2]="inputMessage" (eventMessages)="showMessage($event)"></app-message>
 

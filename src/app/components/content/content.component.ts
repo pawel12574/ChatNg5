@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 
 @Component({
@@ -6,11 +6,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
-export class ContentComponent implements OnInit {
+export class ContentComponent {
 
-  constructor() { }
+  tempmessage = '';
 
-  ngOnInit() {
+  showMessage(event) {
+    this.tempmessage = event;
+    console.log(event);
   }
 
 }

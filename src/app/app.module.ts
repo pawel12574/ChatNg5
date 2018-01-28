@@ -4,7 +4,6 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from "./components/header/header.component";
-import {InputComponent} from "./components/input/input.component";
 import {ApptitleComponent} from "./components/title/apptitle.component";
 import {WelcomeMessageComponent} from "./components/welcomemessage/welcomemessage.component";
 import {ContentComponent} from "./components/content/content.component";
@@ -18,7 +17,6 @@ import { MessageComponent } from './components/message/message.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    InputComponent,
     ApptitleComponent,
     WelcomeMessageComponent,
     ContentComponent,
