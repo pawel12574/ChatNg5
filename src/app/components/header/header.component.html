@@ -1,4 +1,17 @@
 <section class="box-header">
-  <app-apptitle></app-apptitle>
-  <app-welcomemessage></app-welcomemessage>
+  <div class="column">
+    <div class="title">
+      <app-apptitle></app-apptitle>
+    </div>
+
+    <div class="welcome-message">
+      <app-welcomemessage [name]="tempusername"></app-welcomemessage>
+    </div>
+  </div>
+
+</section>
+
+<section class="box-content">
+  <app-settings (usernameEvent)="showUsername($event)"></app-settings>
+  <!--<app-userlist [username]="tempusername" ></app-userlist> -->
 </section>

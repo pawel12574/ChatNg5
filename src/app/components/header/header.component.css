@@ -2,4 +2,40 @@
   background: rgb(95, 223, 255);
   border-bottom: 1px solid red;
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content : space-between;
+  align-items: center;
 }
+
+.column{
+
+}
+.box-content{
+  background: red;
+}
+.box{
+  display: flex;
+}
+
+.box-wsrodku{
+  position: absolute;
+  right:0;
+  bottom:0;
+}
+.box-wsrodku2{
+  position: absolute;
+  right:0;
+  bottom:0;
+}
+
+.title{
+
+}
+.settings{
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
+

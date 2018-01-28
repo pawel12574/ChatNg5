@@ -10,6 +10,7 @@ import {ContentComponent} from "./components/content/content.component";
 import {UserlistComponent} from "./components/userlist/userlist.component";
 import {ChathistoryComponent} from "./components/chathistory/chathistory.component";
 import { MessageComponent } from './components/message/message.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 
 
@@ -22,7 +23,8 @@ import { MessageComponent } from './components/message/message.component';
     ContentComponent,
     UserlistComponent,
     ChathistoryComponent,
-    MessageComponent
+    MessageComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule

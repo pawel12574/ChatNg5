@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 
 @Component({
@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+  tempusername = '';
+
+  showUsername(event) {
+    this.tempusername = event;
+    console.log(event);
+  }
 
 }

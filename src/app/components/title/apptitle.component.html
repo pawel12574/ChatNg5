@@ -1,13 +1,11 @@
 <h1> {{title}} </h1>
 
 
-<ul *ngIf="userData.length">
-  <li *ngFor="let user of userData">
-    Imię {{user.firstName}}
-    Nazwisko {{user.secondName}}
-    Miasto {{user.city}}
-  </li>
-</ul>
+<!--<ul *ngIf="userData.length">-->
+  <!--<li *ngFor="let user of userData">-->
+    <!--Imię {{user.firstName}}-->
+    <!--Nazwisko {{user.secondName}}-->
+    <!--Miasto {{user.city}}-->
+  <!--</li>-->
+<!--</ul>-->
 
-<input ngModel name="city"  #city>
-<button (click)="goToNewCity(city.value)" >Chcę do Wawy</button>

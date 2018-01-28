@@ -12,7 +12,9 @@ export class ChathistoryComponent {
   @Input()
   set newMessage(newMessage) {
     if (newMessage !== '') {
-      this.messageHistory.push(newMessage);
+      const date = new Date();
+      const time = date.getHours() + ':' + date.getMinutes();
+      this.messageHistory.push({message: newMessage, date: time});
     }
     console.table(this.messageHistory);
   }

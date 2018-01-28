@@ -7,6 +7,8 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./welcomemessage.component.css']
 })
 export class WelcomeMessageComponent {
-  name = 'Paweł';
+
+  @Input()
+  name;
 
 }
