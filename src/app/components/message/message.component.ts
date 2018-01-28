@@ -8,13 +8,16 @@ import {Component, Output, EventEmitter, Input} from '@angular/core';
 })
 export class MessageComponent {
 
-  defaultValue = '';
+  defaultValue = ''
 
   @Output()
   eventMessages = new EventEmitter();
 
   @Input()
   inputMessage2;
+
+  @Input()
+  username;
 
   onKey(message) {
     this.defaultValue = message.target.value;
