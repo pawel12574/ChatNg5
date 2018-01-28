@@ -11,6 +11,8 @@ export class AppComponent {
   inputMessage = 'nowa wiadomosc';
   tempmessage = '';
 
+  sendMessageToChild ='jakas wiadomosc do przeslania';
+
   hello() {
     return `welcome to ${this.title}`;
   }
