@@ -11,6 +11,7 @@ import {UserlistComponent} from "./components/userlist/userlist.component";
 import {ChathistoryComponent} from "./components/chathistory/chathistory.component";
 import { MessageComponent } from './components/message/message.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import {DataService} from "./services/data.service";
 
 
 
@@ -29,7 +30,7 @@ import { SettingsComponent } from './components/settings/settings.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
