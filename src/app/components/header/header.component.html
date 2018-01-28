@@ -1,20 +1,28 @@
+
 <section class="box-header">
   <div class="column">
     <div class="title">
       <app-apptitle></app-apptitle>
     </div>
-
     <div class="welcome-message">
-      <app-welcomemessage [name]="tempusername"></app-welcomemessage>
+      <app-welcomemessage [name]="savedUserName">
+      </app-welcomemessage>
+    </div>
+  </div>
+  <div class="column">
+    <div class="settings" *ngIf="savedUserName.length==0">
+      <button (click)="setUserName(userName.value)">Login</button>
+      <input type="text" name="userName" ngModel #userName>
+    </div>
+    <div class="success-login" *ngIf="savedUserName.length!=0">
+      Gratulacje, zalogowałeś się!
+      <button (click)="resetUserName()">Logout</button>
     </div>
   </div>
 
-</section>
 
-<section class="box-content">
-  <app-settings (usernameEvent)="showUsername($event)"></app-settings>
-  <!--<app-userlist [username]="tempusername" ></app-userlist> -->
+
 </section>
 
 
-{{nowaZmienna}}
+

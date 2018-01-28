@@ -1,6 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, Inject, Input} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-
+import {WelcomeMessageComponent} from './../welcomemessage/welcomemessage.component';
+import {DataService} from "../../services/data.service";
+import {ApptitleComponent} from "../title/apptitle.component";
 
 @Component({
   selector: 'app-header',
@@ -9,29 +12,27 @@ import {Component} from '@angular/core';
 })
 export class HeaderComponent {
 
-  tempusername = '';
-
-  showUsername(event) {
-    this.tempusername = event;
-    console.log(event);
+  constructor(@Inject(DataService) private dataService) {
   }
 
-  // name = 'Paweł';
-  // surname = 'Eliasz';
-  // city = 'łomża'
-  // nowaZmienna = this.highLight`Mamna imię ${this.name}, na nazwisko ${this.surname} i pochodzę z ${this.city}`;
+  historyMessages = [];
 
-  // highLight(param1, ...param2) {
-  //   console.log('param1', param1);
-  //   console.log('param2', param2);
-  //   let newText = '';
-  //
-  //   for (let i = 0; i < param1.length; i++) {
-  //     newText += `${param1[i]} + ${(param2[i] || '').toUpperCase()}`;
-  //   }
-  //
-  //   return newText;
-  // }
+  @Input()
+  set newMessage(newMessage) {
+    if (newMessage !== '') {
+      this.historyMessages.push(newMessage);
+    }
+  }
+
+  savedUserName = '';
+
+  setUserName(userName) {
+    this.savedUserName = userName;
+  }
+
+  resetUserName() {
+    this.savedUserName = '';
+  }
 
 
 }
