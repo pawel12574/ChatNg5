@@ -13,11 +13,11 @@ export class MessageComponent {
   @Output()
   eventMessages = new EventEmitter();
 
-  @Input()
-  inputMessage2;
+  // @Input()
+  // inputMessage2;
 
   @Input()
-  username;
+  username; //unused
 
   onKey(message) {
     this.defaultValue = message.target.value;
@@ -25,7 +25,7 @@ export class MessageComponent {
 
   sendMessage() {
     this.eventMessages.emit(this.defaultValue);
-    this.defaultValue = '';
+    this.defaultValue = ''; //reset input value after send message
   }
 
 }

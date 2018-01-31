@@ -12,6 +12,7 @@ import {ChathistoryComponent} from "./components/chathistory/chathistory.compone
 import { MessageComponent } from './components/message/message.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import {DataService} from "./services/data.service";
+import {DatarxService} from "./service/datarx.service";
 
 
 
@@ -30,7 +31,7 @@ import {DataService} from "./services/data.service";
   imports: [
     BrowserModule
   ],
-  providers: [DataService],
+  providers: [DataService, DatarxService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
