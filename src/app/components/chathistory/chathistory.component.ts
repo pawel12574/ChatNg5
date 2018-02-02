@@ -1,6 +1,7 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
 import {DatarxService} from "../../service/datarx.service";
 import {Subscription} from "rxjs/Subscription";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-chathistory',
@@ -12,26 +13,27 @@ export class ChathistoryComponent implements OnInit {
   messageHistory = [];
   sub: Subscription; //it's working without this
 
-  constructor(@Inject(DatarxService) private datarxService) {
+  constructor(private route: ActivatedRoute, @Inject(DatarxService) private datarxService) {
   }
 
   ngOnInit() {
+    const username = this.route.snapshot.paramMap.get('username');
+    console.log(username);
+    this.datarxService.setToUser(username);
+
+
     this.sub = this.datarxService.getMessage()
       .subscribe(res => {
+        const loggedUser = this.datarxService.getFromUser();
         console.log(res);
-        this.messageHistory.push(res);
-      });
-  }
 
-  @Input()
-  set newMessage(newMessage) {
-    if (newMessage !== '') {
-      const date = new Date();
-      const time = date.getHours() + ':' + date.getMinutes();
-      //this.messageHistory.push({message: newMessage, date: time});
-      this.datarxService.sendMessage({message: newMessage, date: time});
-    }
-    console.table(this.messageHistory);
+        if ((res.toUser === loggedUser && res.fromUser === username ) || (res.toUser === username && res.fromUser === loggedUser)) {
+          this.messageHistory.push(res);
+        }
+      });
+    // this.messageHistory.filter(e => e.fromUser === username); //przefiltrowac po username
+
+
   }
 
 }

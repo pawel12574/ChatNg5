@@ -32,6 +32,7 @@ export class HeaderComponent {
 
   setUserName(userName) {
     this.savedUserName = userName;
+    this.datarxService.setFromUser(userName);
     this.datarxService.addUser(userName);
   }
 

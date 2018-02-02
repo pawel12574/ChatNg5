@@ -1,3 +1,4 @@
+///<reference path="app-routing-module.ts"/>
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
@@ -13,6 +14,9 @@ import { MessageComponent } from './components/message/message.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import {DataService} from "./services/data.service";
 import {DatarxService} from "./service/datarx.service";
+import {AppRoutingModule} from "./app-routing-module";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -29,7 +33,10 @@ import {DatarxService} from "./service/datarx.service";
     SettingsComponent
   ],
   imports: [
-    BrowserModule
+    AppRoutingModule,
+    BrowserModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [DataService, DatarxService],
   bootstrap: [AppComponent]

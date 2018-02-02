@@ -14,6 +14,8 @@ export class DatarxService {
 
   socket: Socket;
   observer: Observer<any>
+  toUser;
+  fromUser;
 
   getMessage(): Observable<any> {
     const observable = new Observable(observer => {
@@ -43,6 +45,22 @@ export class DatarxService {
 
   addUser(user) {
     this.socket.emit('onlineUsers', user);
+  }
+
+  setToUser(username) {
+    this.toUser = username;
+  }
+
+  getToUser() {
+    return this.toUser;
+  }
+
+  setFromUser(username) {
+    this.fromUser = username;
+  }
+
+  getFromUser() {
+    return this.fromUser;
   }
 
   createObservable(): Observable<any> {

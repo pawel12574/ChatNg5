@@ -1,9 +1,10 @@
 
-<app-chathistory [newMessage]="tempmessage" ></app-chathistory>
+<router-outlet></router-outlet>
+<!--<app-chathistory [newMessage]="tempmessage" ></app-chathistory>-->
+
+<app-message></app-message>
 
 <app-userlist ></app-userlist>
-
-<app-message (eventMessages)="showMessage($event)"></app-message>
 
 
 <!--<app-message [inputMessage2]="inputMessage" (eventMessages)="showMessage($event)"></app-message>-->
