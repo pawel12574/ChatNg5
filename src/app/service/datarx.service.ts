@@ -3,7 +3,7 @@ import {Injectable} from "@angular/core";
 import {Observer} from "rxjs/Observer";
 import {map} from "rxjs/operators";
 import * as socketIo from "socket.io-client";
-import {Socket} from "../shared/interfaces"
+import {Socket} from "../shared/interfaces";
 
 declare var io: {
   connect(url: string): Socket;
@@ -15,23 +15,39 @@ export class DatarxService {
   socket: Socket;
   observer: Observer<any>
 
-  getMessage() : Observable<any>{
+  getMessage(): Observable<any> {
+    const observable = new Observable(observer => {
+      this.socket = socketIo('http://localhost:8081');
+
+      this.socket.on('message', (data) => {
+        observer.next(data);
+      });
+
+    });
+    return observable;
+  }
+
+  sendMessage(message) {
+    this.socket.emit('messages', message);
+  }
+
+  getUsers(): Observable<any> {
     this.socket = socketIo('http://localhost:8081');
 
-    this.socket.on('message', res => {
+    this.socket.on('onlineUser', res => {
       this.observer.next(res);
     });
 
     return this.createObservable();
   }
 
-  sendMessage(message){
-    this.socket.emit('clientData', message);
+  addUser(user) {
+    this.socket.emit('onlineUsers', user);
   }
 
-  createObservable() : Observable<any>{
+  createObservable(): Observable<any> {
     return new Observable<any>(observer => {
       this.observer = observer;
-    })
+    });
   }
 }

@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {WelcomeMessageComponent} from './../welcomemessage/welcomemessage.component';
 import {DataService} from "../../services/data.service";
 import {ApptitleComponent} from "../title/apptitle.component";
+import {DatarxService} from "../../service/datarx.service";
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,10 @@ import {ApptitleComponent} from "../title/apptitle.component";
 })
 export class HeaderComponent {
 
-  constructor(@Inject(DataService) private dataService) {
+  // constructor(@Inject(DataService) private dataService) {
+  // }
+
+  constructor(@Inject(DatarxService) private datarxService) {
   }
 
   historyMessages = [];
@@ -28,6 +32,7 @@ export class HeaderComponent {
 
   setUserName(userName) {
     this.savedUserName = userName;
+    this.datarxService.addUser(userName);
   }
 
   resetUserName() {

@@ -29,9 +29,9 @@ export class ContentComponent {
   //   this.sub.unsubscribe();
   // }
 
-  newMessage(newMessage) {
-    //this.datarxService.sendMessage({data: newMessage});
-  }
+  // newMessage(newMessage) {
+  //   this.datarxService.sendMessage({data: newMessage});
+  // }
 
   showMessage(event) { //event from message component
     this.tempmessage = event; //go to chat history component
